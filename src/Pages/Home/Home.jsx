@@ -28,7 +28,7 @@ const Home = () => {
       <div>this is home page</div>
       {songsData.map((data) => (
         <div
-          key={name}
+          key={data.name}
           style={{ cursor: "pointer" }}
           onClick={() => handleClick(data.link)}
         >
