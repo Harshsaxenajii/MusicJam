@@ -1,12 +1,11 @@
 import React from "react";
-import { loginEndpoint } from "../spotify";
 
 function Login() {
   return (
     <div>
-      <a href={loginEndpoint}>
+      <div>
         <div>login</div>
-      </a>
+      </div>
     </div>
   );
 }
