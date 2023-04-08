@@ -4,7 +4,7 @@ import Login from "../auth/Login";
 import Home from "../components/Home";
 import { setClientToken } from "../spotify";
 
-function index() {
+function Index() {
   const [token, setToken] = useState("");
   useEffect(() => {
     const token = window.localStorage.getItem("token");
@@ -31,4 +31,4 @@ function index() {
   );
 }
 
-export default index;
+export default Index;
