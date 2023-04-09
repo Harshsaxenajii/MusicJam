@@ -50,22 +50,25 @@ function Login() {
                   {!password && <label>Password</label>}
                 </div>
                 <button className="sign-btn">Login</button>
+                <Link to="/">
                 <button className="sign-btn skip-btn">
-                  <svg
-                    width="16"
-                    height="16"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="arrow"
-                  >
-                    <path d="m8.625 5.25 6.75 6.75-6.75 6.75"></path>
-                  </svg>
-                </button>
+                <svg
+                  width="16"
+                  height="16"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="arrow"
+                >
+                  <path d="m8.625 5.25 6.75 6.75-6.75 6.75"></path>
+                </svg>
+              </button>
+                </Link>
+
                 <p className="text">
                   Forgotten your password or you login datails?
                   <a href="#">Get help</a> signing in
