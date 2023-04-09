@@ -1,14 +1,26 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap");
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body,
+input {
+  font-family: "Poppins", sans-serif;
+}
 body {
   margin: 0px;
   padding: 0px;
 }
-img {
-  width: 300px;
-  height: 300px;
+.img_cover {
+  width: 150px;
+  height: 150px;
 }
 
 .songData {
-  width: 168vh;
+  /* width: 168vh; */
   padding: 4px;
   display: flex;
   gap: 20px;
@@ -16,12 +28,9 @@ img {
   overflow-x: scroll;
 }
 .musicCard {
-  border: 1px solid gray;
   display: flex;
-  justify-content: center;
   flex-direction: column;
-  align-items: center;
-  scroll-snap-align: start;
+  font-size: 12px;
 }
 
 /* width */
@@ -32,31 +41,67 @@ img {
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: #f1f1f1;
+  background: transparent;
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #b8b5b5;
+  background: transparent;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #b8b6b6;
+  background: transparent;
 }
 
 audio {
-  width: 107rem;
+  width: 90vh;
   position: absolute;
   bottom: 0px;
 }
 
 .mainDiv {
+  overflow: hidden;
   display: flex;
+  position: relative;
+  width: 100%;
+  max-width: 1120px;
+  height: 760px;
+  background-color: #fff;
+  border-radius: 2.5rem;
+  box-shadow: 0 60px 40px -30px rgba(0, 0, 0, 0.27);
+  background-image: url(./Images/meta_eyJzcmNCdWNrZXQiOiJiemdsZmlsZXMifQ==.webp);
+  color: white;
+}
+.mainCont {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+}
+.mainNav {
+  padding: 20px;
+  width: 15%;
+  background: rgb(12, 12, 12);
+  /* height: 100vh; */
+}
+.navLinks {
+  color: white;
+  text-decoration: none;
+}
+Link {
+  text-decoration: none;
 }
 
-.mainNav {
-  width: 10%;
-  background: gray;
-  height: 100vh;
+.parentClass {
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+  background: radial-gradient(ellipse at top, #ecdbba, transparent),
+    radial-gradient(ellipse at bottom, #191919, transparent);
+  background-position: 0%;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

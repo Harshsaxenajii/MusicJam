@@ -5,16 +5,16 @@ function Navbar() {
   return (
     <div>
       <div>
-        <Link to="/">
+        <Link className="navLinks" to="/">
           <ul>Home</ul>
         </Link>
-        <Link to="/login">
+        <Link className="navLinks" to="/login">
           <ul>Login</ul>
         </Link>
-        <Link to="/signup">
+        <Link className="navLinks" to="/signup">
           <ul>Signup</ul>
         </Link>
-        <Link to="/dashboard">
+        <Link className="navLinks" to="/dashboard">
           <ul>Dashboard</ul>
         </Link>
       </div>
