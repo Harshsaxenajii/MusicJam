@@ -1,0 +1,62 @@
+body {
+  margin: 0px;
+  padding: 0px;
+}
+img {
+  width: 300px;
+  height: 300px;
+}
+
+.songData {
+  width: 168vh;
+  padding: 4px;
+  display: flex;
+  gap: 20px;
+  justify-content: start;
+  overflow-x: scroll;
+}
+.musicCard {
+  border: 1px solid gray;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  scroll-snap-align: start;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 1px;
+  height: 4px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #b8b5b5;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #b8b6b6;
+}
+
+audio {
+  width: 107rem;
+  position: absolute;
+  bottom: 0px;
+}
+
+.mainDiv {
+  display: flex;
+}
+
+.mainNav {
+  width: 10%;
+  background: gray;
+  height: 100vh;
+}
