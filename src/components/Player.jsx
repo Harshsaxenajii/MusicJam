@@ -15,11 +15,38 @@ function Player(props) {
   useEffect(() => {
     newSong(props.musicLink);
   }, [props.musicLink]);
+
+  const playSong = () => {
+    audioElem.current.play();
+    console.log("play");
+  };
+  const pauseSong = () => {
+    audioElem.current.pause();
+    console.log("pause");
+  };
   return (
     <div>
-      <audio ref={audioElem} controls autoPlay="true">
-        <source src={song} />
-      </audio>
+      <button
+        onClick={() =>
+          props.setSongIndex((props.currentSongIndex - 1) % props.songs.length)
+        }
+      >
+        prev
+      </button>
+      <button
+        onClick={() =>
+          props.setSongIndex((props.currentSongIndex + 1) % props.songs.length)
+        }
+      >
+        next
+      </button>
+      <button onClick={playSong}>play</button>
+      <button onClick={pauseSong}>pause</button>
+      <div className="my-player">
+        <audio ref={audioElem} controls autoPlay="true">
+          <source src={song} />
+        </audio>
+      </div>
     </div>
   );
 }
