@@ -14,8 +14,7 @@ input {
   width: 100%;
   min-height: 100vh;
   overflow: hidden;
-  background: radial-gradient(ellipse at top, #ECDBBA, transparent),            
-  radial-gradient(ellipse at bottom, #191919, transparent);
+  background-color: #FEF2F4;
   background-position: 0%;
   padding: 1rem;
   display: flex;
@@ -28,7 +27,7 @@ input {
   max-width: 1120px;
   height: 760px;
   background-color: #fff;
-  border-radius: 2.5rem;
+  border-radius: 4rem;
   box-shadow: 0 60px 40px -30px rgba(0, 0, 0, 0.27);
 }
 .heading{
@@ -108,7 +107,7 @@ form {
 }
 
 .toggle:hover {
-  color: #2D4263;
+  color: #009FBD;
 }
 
 .input-wrap {
@@ -164,7 +163,7 @@ label {
 }
 
 .sign-btn:hover {
-  background-color: #2D4263;
+  background-color: #009FBD;
 }
 .skip-btn{
   display: flex;
@@ -187,7 +186,7 @@ label {
 }
 
 .text a:hover {
-  color: #2D4263;
+  color:#009FBD;
 }
 .gallery{
   position: absolute;

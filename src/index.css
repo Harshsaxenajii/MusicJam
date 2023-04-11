@@ -8,11 +8,25 @@
 }
 body,
 input {
-  font-family: "Poppins", sans-serif;
+  font-family: quatro, sans-serif;
+  font-style: normal;
+}
+h4{
+  font-weight: 400;
 }
 body {
   margin: 0px;
   padding: 0px;
+}
+.parentClass {
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #FEF2F4;
 }
 .img_cover {
   width: 150px;
@@ -20,19 +34,44 @@ body {
 }
 
 .songData {
-  /* width: 168vh; */
   padding: 4px;
   display: flex;
-  gap: 20px;
+  gap: 50px;
   justify-content: start;
   overflow-x: scroll;
+  height: 40%;
+  z-index: 2;
 }
 .musicCard {
   display: flex;
   flex-direction: column;
-  font-size: 12px;
+  min-width: 11.3rem;
+  height: 35vh;
 }
+.img_cover{
+  width: 100%;
+  height: 66%;
+  object-fit: cover;
+  border-radius: 14px;
+  box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 25px -20px;
+  transition: 0.2s ease-out;
+}
+.img_cover:hover{
+  height: 67.6%;
+}
+.song_name{
+  margin-top: 1rem;
+  font-size: 0.85rem;
+  font-weight: 600;
 
+}
+.artist{
+  color: rgb(25, 25, 25,0.6);
+  margin-top: 0.3rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+
+}
 /* width */
 ::-webkit-scrollbar {
   width: 1px;
@@ -68,40 +107,152 @@ audio {
   max-width: 1120px;
   height: 760px;
   background-color: #fff;
-  border-radius: 2.5rem;
-  box-shadow: 0 60px 40px -30px rgba(0, 0, 0, 0.27);
-  background-image: url(./Images/meta_eyJzcmNCdWNrZXQiOiJiemdsZmlsZXMifQ==.webp);
-  color: white;
+  border-radius: 0.3rem;
+  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.27);
+  background: linear-gradient(to bottom,rgba(255, 153, 102,0.7),rgba(255, 94, 98,0.4));
 }
-.mainCont {
+.maincont {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 15px;
   padding: 20px;
+  width: 82%;
 }
 .mainNav {
-  padding: 20px;
-  width: 15%;
-  background: rgb(12, 12, 12);
-  /* height: 100vh; */
+  width: 18%;
+  background-color: rgba(255, 255, 255);
+  box-shadow:0px 0px 25px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.mainNav h5{
+  padding-left: 0.7rem;
+  margin-top: 10px;
+  color: rgb(25, 25, 25,0.6);
+  font-weight: 500;
+  font-size: 19px;
 }
 .navLinks {
-  color: white;
+  padding-left: 1.6rem;
+  margin-top: 10px;
+  display: block;
+  color: rgb(25, 25, 25,0.5);
   text-decoration: none;
+  transition: color 0.1s;
+  font-weight: 500;
+  cursor: pointer;
 }
-Link {
-  text-decoration: none;
+.navLinks:hover{
+  color: rgba(255, 94, 98);
+  border-right: 2px solid rgba(255, 94, 98);
+}
+.logo_box{
+  display: flex;
+  justify-content:center;
+  margin-right: 0.6rem;
 }
 
-.parentClass {
-  width: 100%;
-  min-height: 100vh;
-  overflow: hidden;
-  background: radial-gradient(ellipse at top, #ecdbba, transparent),
-    radial-gradient(ellipse at bottom, #191919, transparent);
-  background-position: 0%;
-  padding: 1rem;
+.main_logo {
+  margin-top: 2.4rem;
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+  overflow: hidden;
+
 }
+.main_logo img {
+  width: 4rem;
+}
+.logo_head{
+  font-weight: 500;
+  font-size: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1.2rem;
+}
+.newNav{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  overflow: hidden;
+  width: 100%;
+  border-bottom:1px solid rgb(0, 0, 0,0.27);
+  height:5vh;
+  flex-wrap: wrap;
+}
+.search_bar{
+  display: flex;
+  justify-content: start;
+  width: 42%;
+  padding-bottom: 15px;
+}
+
+.search_bar input{
+  border-radius:2rem;
+  border: none;
+  width:13rem ;
+  padding-left: 10px;
+}
+.search_bar input:focus{
+  outline:none;
+}
+.search_button{
+  min-width: 0.5rem;
+  margin-left: 0.5rem;
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(255, 255, 255,0);
+}
+.search_button img{
+  margin-bottom: 0.1rem;
+}
+.user_info{
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+.user_logo_box{
+  float: right;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+.user_logo_box img{
+  padding-top: 10px;
+  max-width: 45px;
+}
+.user_info span{
+  padding-bottom: 5px;
+  padding-right: 10px;
+  float:right;
+
+}
+.morecont{
+  min-width: 100%;
+  display: flex;
+  gap: 30px;
+}
+.imorecont{
+  background-color: rgb(255, 255, 255);
+  height: 38vh;
+  border-radius: 1.3rem;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  margin-top: 1rem;
+}
+.playerbox{
+  margin-left: 1rem;
+  min-width: 31.6%;
+}
+.favbox{
+  min-width: 63%;
+}
+
+
+
+
+
