@@ -5,24 +5,10 @@ import search_logo from "./img/search.png";
 import user_logo from "./img/logo.png";
 
 const Home = () => {
-  const [song, setSong] = useState("");
-  const [songsData] = useState([
-    // {
-    //   name: "Jeda Nasa",
-    //   link: "https://res.cloudinary.com/dxzbdrvmn/video/upload/v1680929990/music%20application/Random%20Songs/Jeda_Nasha_fngkoe.mp3",
-    //   singer: "qwerty",
-    // },
-    // {
-    //   name: "patli kamariya",
-    //   link: "https://res.cloudinary.com/dxzbdrvmn/video/upload/v1680929990/music%20application/Random%20Songs/Patli_Kamariya_Mori_Haye_Haye_hj2s74.mp3",
-    //   singer: "qwerty",
-    // },
-    // {
-    //   name: "Maan mare jaan",
-    //   link: "https://res.cloudinary.com/dxzbdrvmn/video/upload/v1680929986/music%20application/Random%20Songs/Tu_Maan_Meri_Jaan_ffyzj4.mp3",
-    //   singer: "qwerty",
-    // },
+  const [currentSongIndex, setSongIndex] = useState(0);
+  const [songs] = useState([
     {
+      id: 0,
       name: "Despacito",
       singer: "Luis Fonsi",
       cover:
@@ -31,6 +17,7 @@ const Home = () => {
         "http://res.cloudinary.com/alick/video/upload/v1502689683/Luis_Fonsi_-_Despacito_ft._Daddy_Yankee_uyvqw9.mp3",
     },
     {
+      id: 1,
       name: "Bedtime Stories",
       singer: "Jay Chou",
       cover:
@@ -39,6 +26,7 @@ const Home = () => {
         "http://res.cloudinary.com/alick/video/upload/v1502375674/Bedtime_Stories.mp3",
     },
     {
+      id: 2,
       name: "Dorost Nemisham",
       singer: "Sirvan Khosravi",
       cover:
@@ -47,42 +35,40 @@ const Home = () => {
         "https://res.cloudinary.com/ehsanahmadi/video/upload/v1573550770/Sirvan-Khosravi-Dorost-Nemisham-128_kb8urq.mp3",
     },
     {
-      name: "Dorost Nemisham",
-      singer: "Sirvan Khosravi",
+      id: 3,
+      name: "Jeda Nasa",
+      singer: "qwerty",
       cover:
         "https://res.cloudinary.com/ehsanahmadi/image/upload/v1573758778/Sirvan-Khosravi-Dorost-Nemisham_glicks.jpg",
       musicSrc:
-        "https://res.cloudinary.com/ehsanahmadi/video/upload/v1573550770/Sirvan-Khosravi-Dorost-Nemisham-128_kb8urq.mp3",
+        "https://res.cloudinary.com/dxzbdrvmn/video/upload/v1680929990/music%20application/Random%20Songs/Jeda_Nasha_fngkoe.mp3",
     },
     {
-      name: "Dorost Nemisham",
-      singer: "Sirvan Khosravi",
-      cover:
-        "https://res.cloudinary.com/ehsanahmadi/image/upload/v1573758778/Sirvan-Khosravi-Dorost-Nemisham_glicks.jpg",
+      id: 4,
+      name: "patli kamariya",
+      singer: "qwerty",
       musicSrc:
-        "https://res.cloudinary.com/ehsanahmadi/video/upload/v1573550770/Sirvan-Khosravi-Dorost-Nemisham-128_kb8urq.mp3",
+        "https://res.cloudinary.com/dxzbdrvmn/video/upload/v1680929990/music%20application/Random%20Songs/Patli_Kamariya_Mori_Haye_Haye_hj2s74.mp3",
+      cover:
+        "http://res.cloudinary.com/alick/image/upload/v1502689731/Despacito_uvolhp.jpg",
     },
+
     {
-      name: "Dorost Nemisham",
-      singer: "Sirvan Khosravi",
-      cover:
-        "https://res.cloudinary.com/ehsanahmadi/image/upload/v1573758778/Sirvan-Khosravi-Dorost-Nemisham_glicks.jpg",
+      id: 5,
+      name: "Maan mare jaan",
+      singer: "qwerty",
       musicSrc:
-        "https://res.cloudinary.com/ehsanahmadi/video/upload/v1573550770/Sirvan-Khosravi-Dorost-Nemisham-128_kb8urq.mp3",
-    },
-    {
-      name: "Dorost Nemisham",
-      singer: "Sirvan Khosravi",
+        "https://res.cloudinary.com/dxzbdrvmn/video/upload/v1680929986/music%20application/Random%20Songs/Tu_Maan_Meri_Jaan_ffyzj4.mp3",
       cover:
-        "https://res.cloudinary.com/ehsanahmadi/image/upload/v1573758778/Sirvan-Khosravi-Dorost-Nemisham_glicks.jpg",
-      musicSrc:
-        "https://res.cloudinary.com/ehsanahmadi/video/upload/v1573550770/Sirvan-Khosravi-Dorost-Nemisham-128_kb8urq.mp3",
+        "http://res.cloudinary.com/alick/image/upload/v1502375978/bedtime_stories_bywggz.jpg",
     },
   ]);
-  const handleClick = (link) => {
-    console.log(link);
-    setSong(link);
+
+  const handleClick = (index) => {
+    console.log(index);
+    setSongIndex(index);
   };
+
   return (
     <div className="parentClass">
       <div className="mainDiv">
@@ -98,21 +84,20 @@ const Home = () => {
               </button>
             </div>
             <div className="user_info">
-
               <span>Harsh</span>
               <div className="user_logo_box">
-              <img src={user_logo} alt="logo" />
-            </div>
+                <img src={user_logo} alt="logo" />
+              </div>
             </div>
           </div>
           <h4>Top Songs</h4>
           <div className="songData">
-            {songsData.map((data) => (
+            {songs.map((data) => (
               <div
                 className="musicCard"
-                key={data.name}
+                key={data.id}
                 style={{ cursor: "pointer" }}
-                onClick={() => handleClick(data.musicSrc)}
+                onClick={() => handleClick(data.id)}
               >
                 <img className="img_cover" src={data.cover} alt="" />
 
@@ -121,16 +106,17 @@ const Home = () => {
               </div>
             ))}
           </div>
-          <div className="morecont">
-            <div className="favbox">
-              <h4>Liked</h4>
-              <div className="imorecont fav"></div>
-            </div>
-            <div className="playerbox">
-              <h4>Now Playing</h4>
-              <div className="imorecont player"></div>
-            </div>
-            <div>{song && <Player musicLink={song} />}</div>
+
+          <div>
+            {songs && (
+              <Player
+                currentSongIndex={currentSongIndex}
+                setSongIndex={setSongIndex}
+                musicLink={songs[currentSongIndex].musicSrc}
+                songs={songs}
+                songsImg={songs[currentSongIndex].cover}
+              />
+            )}
           </div>
         </div>
       </div>
