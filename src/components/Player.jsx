@@ -1,4 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
+import { AiOutlinePauseCircle, AiOutlinePlayCircle } from "react-icons/ai";
+import { BiSkipNextCircle, BiSkipPreviousCircle } from "react-icons/bi";
 
 function Player(props) {
   const [song, newSong] = useState(props.musicLink);
@@ -68,45 +70,55 @@ function Player(props) {
     newSong(props.musicLink);
   }, [props.musicLink]);
 
-  const playSong = () => {
-    audioElem.current.play();
-    console.log("play");
-  };
-  const pauseSong = () => {
-    audioElem.current.pause();
-    console.log("pause");
-  };
   return (
     <div>
-      <button
-        onClick={() =>
-          props.setSongIndex((props.currentSongIndex - 1) % props.songs.length)
-        }
-      >
-        prev
-      </button>
-      <button
-        onClick={() =>
-          props.setSongIndex((props.currentSongIndex + 1) % props.songs.length)
-        }
-      >
-        next
-      </button>
-      <button onClick={playSong}>play</button>
-      <button onClick={pauseSong}>pause</button>
+      <div className="player_button">
+        {/* this is the prev button */}
+        <div
+          onClick={() =>
+            props.setSongIndex(
+              (props.currentSongIndex - 1) % props.songs.length
+            )
+          }
+        >
+          <BiSkipPreviousCircle />
+        </div>
+
+        {/* this is the play pause button */}
+        <div
+          className="playPause"
+          onClick={changePlayPause}
+          style={{ cursor: "pointer" }}
+        >
+          {isPlaying ? (
+            <i>
+              <AiOutlinePauseCircle />
+            </i>
+          ) : (
+            <i>
+              <AiOutlinePlayCircle />
+            </i>
+          )}
+        </div>
+
+        {/* this is the next button */}
+        <div
+          onClick={() =>
+            props.setSongIndex(
+              (props.currentSongIndex + 1) % props.songs.length
+            )
+          }
+        >
+          <BiSkipNextCircle />
+        </div>
+      </div>
+
       <div className="my-player">
         <audio ref={audioElem} preload="metadata">
           <source src={song} />
         </audio>
       </div>
 
-      <div
-        className="playPause"
-        onClick={changePlayPause}
-        style={{ cursor: "pointer" }}
-      >
-        {isPlaying ? <i>pause</i> : <i>play</i>}
-      </div>
       <img style={{ width: "200px" }} src={props.songsImg} alt="" />
       <input
         type="range"
