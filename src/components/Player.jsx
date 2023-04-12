@@ -46,7 +46,7 @@ function Player(props) {
     const returnMin = minutes < 10 ? `0${minutes}` : `${minutes}`;
     const seconds = Math.floor(sec % 60);
     const returnSec = seconds < 10 ? `0${seconds}` : `${seconds}`;
-    return `${returnMin} : ${returnSec}`;
+    return `${returnMin}:${returnSec}`;
   };
 
   const changeCurrentTime = () => {
@@ -71,7 +71,31 @@ function Player(props) {
   }, [props.musicLink]);
 
   return (
-    <div>
+    <div className="playerDiv">
+      <img style={{ width: "200px" }} src={props.songsImg} alt="" />
+
+      <div className="my-player">
+        <audio ref={audioElem} preload="metadata">
+          <source src={song} />
+        </audio>
+      </div>
+
+      <div className="looper">
+        <div className="time currentTime">{calculateTime(currentTime)}</div>
+        <input
+          type="range"
+          className="progressBar"
+          ref={progressBar}
+          defaultValue="0"
+          onChange={changeProgress}
+        />
+        <div className="time duration">
+          {duration && !isNaN(duration) && calculateTime(duration)
+            ? duration && !isNaN(duration) && calculateTime(duration)
+            : "00:00"}
+        </div>
+      </div>
+
       <div className="player_button">
         {/* this is the prev button */}
         <div
@@ -81,7 +105,7 @@ function Player(props) {
             )
           }
         >
-          <BiSkipPreviousCircle />
+          <BiSkipPreviousCircle className="smallLogo" />
         </div>
 
         {/* this is the play pause button */}
@@ -92,11 +116,11 @@ function Player(props) {
         >
           {isPlaying ? (
             <i>
-              <AiOutlinePauseCircle />
+              <AiOutlinePauseCircle className="Logo" />
             </i>
           ) : (
             <i>
-              <AiOutlinePlayCircle />
+              <AiOutlinePlayCircle className="Logo" />
             </i>
           )}
         </div>
@@ -109,29 +133,8 @@ function Player(props) {
             )
           }
         >
-          <BiSkipNextCircle />
+          <BiSkipNextCircle className="smallLogo" />
         </div>
-      </div>
-
-      <div className="my-player">
-        <audio ref={audioElem} preload="metadata">
-          <source src={song} />
-        </audio>
-      </div>
-
-      <img style={{ width: "200px" }} src={props.songsImg} alt="" />
-      <input
-        type="range"
-        className="progressBar"
-        ref={progressBar}
-        defaultValue="0"
-        onChange={changeProgress}
-      />
-      <div className="currentTime">{calculateTime(currentTime)}</div>
-      <div className="duration">
-        {duration && !isNaN(duration) && calculateTime(duration)
-          ? duration && !isNaN(duration) && calculateTime(duration)
-          : "00:00"}
       </div>
     </div>
   );

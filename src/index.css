@@ -252,4 +252,30 @@ audio {
 
 .player_button {
   display: flex;
+  align-items: center;
+}
+
+.Logo {
+  width: 40px;
+  height: 40px;
+}
+
+.smallLogo {
+  width: 30px;
+  height: 30px;
+}
+
+.time{
+  font-size: 12px;
+}
+.looper{
+  display: flex;
+  gap: 6px;
+}
+.playerDiv{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
 }
