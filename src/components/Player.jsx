@@ -1,5 +1,9 @@
 import React, { useEffect, useRef, useState } from "react";
-import { AiOutlinePauseCircle, AiOutlinePlayCircle } from "react-icons/ai";
+import {
+  AiOutlinePauseCircle,
+  AiOutlinePlayCircle,
+  AiOutlineHeart,
+} from "react-icons/ai";
 import { BiSkipNextCircle, BiSkipPreviousCircle } from "react-icons/bi";
 
 function Player(props) {
@@ -72,12 +76,10 @@ function Player(props) {
 
   return (
     <div className="playerDiv">
-      <img style={{ width: "200px" }} src={props.songsImg} alt="" />
+      <img style={{ width: "60%" }} src={props.songsImg} alt="" />
 
       <div className="my-player">
-        <audio ref={audioElem} preload="metadata">
-          <source src={song} />
-        </audio>
+        <audio ref={audioElem} preload="metadata" src={song} />
       </div>
 
       <div className="looper">
