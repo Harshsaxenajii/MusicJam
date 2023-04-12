@@ -97,6 +97,7 @@ const Home = () => {
                 setSongIndex={setSongIndex}
                 musicLink={songs[currentSongIndex].musicSrc}
                 songs={songs}
+                songsImg={songs[currentSongIndex].cover}
               />
             )}
           </div>

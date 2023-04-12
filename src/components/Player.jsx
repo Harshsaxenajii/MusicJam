@@ -95,15 +95,19 @@ function Player(props) {
       <button onClick={playSong}>play</button>
       <button onClick={pauseSong}>pause</button>
       <div className="my-player">
-        <audio ref={audioElem} preload="metadata" controls autoPlay="true">
+        <audio ref={audioElem} preload="metadata">
           <source src={song} />
         </audio>
       </div>
 
-      <div className="playPause" onClick={changePlayPause}>
+      <div
+        className="playPause"
+        onClick={changePlayPause}
+        style={{ cursor: "pointer" }}
+      >
         {isPlaying ? <i>pause</i> : <i>play</i>}
       </div>
-
+      <img style={{ width: "200px" }} src={props.songsImg} alt="" />
       <input
         type="range"
         className="progressBar"

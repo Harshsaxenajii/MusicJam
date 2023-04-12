@@ -55,9 +55,7 @@ body {
 }
 
 audio {
-  width: 90vh;
-  position: absolute;
-  bottom: 0px;
+  display: none;
 }
 
 .mainDiv {
