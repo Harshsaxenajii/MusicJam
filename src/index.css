@@ -11,7 +11,7 @@ input {
   font-family: quatro, sans-serif;
   font-style: normal;
 }
-h4{
+h4 {
   font-weight: 400;
 }
 body {
@@ -21,12 +21,11 @@ body {
 .parentClass {
   width: 100%;
   min-height: 100vh;
-  overflow: hidden;
   padding: 1rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #FEF2F4;
+  background-color: #fef2f4;
 }
 .img_cover {
   width: 150px;
@@ -36,19 +35,19 @@ body {
 .songData {
   padding: 4px;
   display: flex;
-  gap: 50px;
+  gap: 19px;
   justify-content: start;
-  overflow-x: scroll;
-  height: 40%;
+  overflow-x: auto;
+  height: full;
   z-index: 2;
 }
 .musicCard {
   display: flex;
   flex-direction: column;
-  min-width: 11.3rem;
-  height: 35vh;
+  min-width: 10rem;
+  height: 28vh;
 }
-.img_cover{
+.img_cover {
   width: 100%;
   height: 66%;
   object-fit: cover;
@@ -56,21 +55,19 @@ body {
   box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 25px -20px;
   transition: 0.2s ease-out;
 }
-.img_cover:hover{
+.img_cover:hover {
   height: 67.6%;
 }
-.song_name{
+.song_name {
   margin-top: 1rem;
   font-size: 0.85rem;
   font-weight: 600;
-
 }
-.artist{
-  color: rgb(25, 25, 25,0.6);
+.artist {
+  color: rgb(25, 25, 25, 0.6);
   margin-top: 0.3rem;
   font-size: 0.75rem;
   font-weight: 500;
-
 }
 /* width */
 ::-webkit-scrollbar {
@@ -94,9 +91,7 @@ body {
 }
 
 audio {
-  width: 90vh;
-  position: absolute;
-  bottom: 0px;
+  display: none;
 }
 
 .mainDiv {
@@ -109,7 +104,11 @@ audio {
   background-color: #fff;
   border-radius: 0.3rem;
   box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.27);
-  background: linear-gradient(to bottom,rgba(255, 153, 102, 0.7),rgba(255, 94, 98,0.4));
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 153, 102, 0.7),
+    rgba(255, 94, 98, 0.4)
+  );
 }
 .maincont {
   display: flex;
@@ -121,15 +120,15 @@ audio {
 .mainNav {
   width: 18%;
   background-color: rgba(255, 255, 255);
-  box-shadow:0px 0px 25px rgba(0, 0, 0, 0.15);
+  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.15);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
-.mainNav h5{
+.mainNav h5 {
   padding-left: 0.7rem;
   margin-top: 10px;
-  color: rgb(25, 25, 25,0.6);
+  color: rgb(25, 25, 25, 0.6);
   font-weight: 500;
   font-size: 19px;
 }
@@ -137,19 +136,19 @@ audio {
   padding-left: 1.6rem;
   margin-top: 10px;
   display: block;
-  color: rgb(25, 25, 25,0.5);
+  color: rgb(25, 25, 25, 0.5);
   text-decoration: none;
   transition: color 0.1s;
   font-weight: 500;
   cursor: pointer;
 }
-.navLinks:hover{
+.navLinks:hover {
   color: rgba(255, 94, 98);
   border-right: 2px solid rgba(255, 94, 98);
 }
-.logo_box{
+.logo_box {
   display: flex;
-  justify-content:center;
+  justify-content: center;
   margin-right: 0.6rem;
 }
 
@@ -159,12 +158,11 @@ audio {
   justify-content: center;
   align-items: center;
   overflow: hidden;
-
 }
 .main_logo img {
   width: 4rem;
 }
-.logo_head{
+.logo_head {
   font-weight: 500;
   font-size: 1rem;
   display: flex;
@@ -172,33 +170,37 @@ audio {
   align-items: center;
   margin-top: 1.2rem;
 }
-.newNav{
+.newNav {
   display: flex;
   justify-content: center;
   flex-direction: column;
-  overflow: hidden;
+  position: relative;
+
   width: 100%;
-  border-bottom:1px solid rgb(0, 0, 0,0.27);
-  height:5vh;
+  border-bottom: 1px solid rgb(0, 0, 0, 0.27);
+  height: 5vh;
   flex-wrap: wrap;
 }
-.search_bar{
+.search_bar {
   display: flex;
   justify-content: start;
   width: 42%;
   padding-bottom: 15px;
 }
 
-.search_bar input{
-  border-radius:2rem;
+.search_bar input {
+  border-radius: 1.3rem;
   border: none;
-  width:13rem ;
-  padding-left: 10px;
+  width: 13rem;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 5px;
+  padding-bottom: 5px;
 }
-.search_bar input:focus{
-  outline:none;
+.search_bar input:focus {
+  outline: none;
 }
-.search_button{
+.search_button {
   min-width: 0.5rem;
   margin-left: 0.5rem;
   border: none;
@@ -206,53 +208,132 @@ audio {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgb(255, 255, 255,0);
+  background-color: rgb(255, 255, 255, 0);
 }
-.search_button img{
+.search_button img {
   margin-bottom: 0.1rem;
 }
-.user_info{
+.user_info {
   display: flex;
   justify-content: end;
   align-items: center;
 }
-.user_logo_box{
+.user_logo_box {
   float: right;
-  display:flex;
+  display: flex;
   justify-content: center;
   align-items: center;
 }
-.user_logo_box img{
+.user_logo_box img {
   padding-top: 10px;
   max-width: 45px;
 }
-.user_info span{
+.user_info span {
   padding-bottom: 5px;
   padding-right: 10px;
-  float:right;
-
+  float: right;
 }
-.morecont{
+.morecont {
   min-width: 100%;
   display: flex;
   gap: 30px;
 }
-.imorecont{
+.imorecont {
   background-color: rgb(255, 255, 255);
   height: 38vh;
   border-radius: 1.3rem;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   margin-top: 1rem;
+  display: flex;
 }
-.playerbox{
+.playerbox {
   margin-left: 1rem;
   min-width: 31.6%;
 }
-.favbox{
+.favbox {
   min-width: 63%;
 }
 
+.player_button {
+  display: flex;
+  align-items: center;
+}
 
+.Logo {
+  width: 40px;
+  height: 40px;
+}
 
+.smallLogo {
+  width: 30px;
+  height: 30px;
+}
+.ultraSmallLogo {
+  width: 14px;
+  height: 14px;
+}
+.time {
+  font-size: 12px;
+}
+.looper {
+  display: flex;
+  gap: 6px;
+}
+.playerDiv {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  border-radius: 1.3rem;
+  overflow: hidden;
+}
 
+.favourite {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  cursor: pointer;
+  font-size: 12px;
+}
+.favourite:hover {
+  background: rgb(230, 227, 227);
+}
+.Datainfo {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
 
+.player {
+  justify-content: center;
+}
+
+.favData {
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: self-start;
+}
+.favImg {
+  width: 30px;
+  height: 30px;
+}
+
+.searchDiv {
+  position: absolute;
+  top: 30px;
+  background: white;
+  width: 23%;
+  padding: 8px 10px;
+  border-radius: 10px;
+  font-size: 12px;
+}
+.searchDiv:hover {
+  background: rgb(230, 227, 227);
+}
