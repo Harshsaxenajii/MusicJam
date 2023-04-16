@@ -18,12 +18,6 @@ function Navbar() {
       <Link className="navLinks" to="/">
         <ul>Home</ul>
       </Link>
-      <Link className="navLinks" to="/login">
-        <ul>Login</ul>
-      </Link>
-      <Link className="navLinks" to="/signup">
-        <ul>Signup</ul>
-      </Link>
       <Link className="navLinks" to="/dashboard">
         <ul>Dashboard</ul>
       </Link>

@@ -2,9 +2,12 @@ import React, { useState } from "react";
 import search_logo from "../Images/search.png";
 import user_logo from "../Images/logo.png";
 import { songs } from "../Songs";
+import { Link } from "react-router-dom";
+
 
 function TopNav() {
   const [currSearch, setCurrSearch] = useState();
+  const [user,setUser]=useState(false);
   return (
     <div>
       <div className="newNav">
@@ -27,7 +30,14 @@ function TopNav() {
             ))}
         </div>
         <div className="user_info">
-          <span>Harsh</span>
+        {user&&<span>Harsh</span>}
+        {!user&&<Link to="/login" >
+          <button className="topnav_link">Login</button>
+          </Link>}
+          {!user&&<Link to="/signup" >
+          <button className="topnav_link">Signup</button>
+          </Link>}
+
           <div className="user_logo_box">
             <img src={user_logo} alt="logo" />
           </div>

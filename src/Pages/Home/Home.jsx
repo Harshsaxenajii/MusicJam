@@ -4,6 +4,7 @@ import Navbar from "../../components/Navbar";
 import TopNav from "../../components/TopNav";
 import { songs } from "../../Songs";
 import { AiOutlineHeart } from "react-icons/ai";
+import heart from "../../Images/heart.png";
 const fav = [3, 5, 7, 8];
 
 const Home = () => {
@@ -40,7 +41,7 @@ const Home = () => {
           <div></div>
           <div className="morecont">
             <div className="favbox">
-              <h4>Liked</h4>
+              <h4>Liked</h4><img src={heart} alt="heart" />
               <div className="imorecont favData fav">
                 {songs
                   .filter((song) => {
@@ -61,6 +62,7 @@ const Home = () => {
             </div>
             <div className="playerbox">
               <h4>Now Playing</h4>
+              
 
               <div className="imorecont player">
                 {songs && (
