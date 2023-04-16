@@ -1,10 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
-import {
-  AiOutlinePauseCircle,
-  AiOutlinePlayCircle,
-  AiOutlineHeart,
-} from "react-icons/ai";
-import { BiSkipNextCircle, BiSkipPreviousCircle } from "react-icons/bi";
+import { BsPauseCircle, BsPlayCircle, BsHeart } from "react-icons/bs";
+import { BsSkipForwardCircle, BsSkipBackwardCircle } from "react-icons/bs";
 
 function Player(props) {
   const [song, newSong] = useState(props.musicLink);
@@ -14,6 +10,11 @@ function Player(props) {
   const audioElem = useRef();
   const animationRef = useRef();
   const progressBar = useRef();
+  // var slider=document.getElementsByClassName("progressBar").oninput=function () {
+  //   var value=((this.value-this.min)/(this.max-this.min))*100
+  //   this.style.background='linear-gradient(to right,#FFA559 0%,#FFA559'+value+'%,#fff '+value+'%,#fff 100%)';
+
+  // }
 
   useEffect(() => {
     const seconds = Math.floor(audioElem.current.duration);
@@ -87,6 +88,15 @@ function Player(props) {
   return (
     <div className="playerDiv">
       <img style={{ width: "60%" }} src={props.songsImg} alt="" />
+      <div>
+        <div className="song_name">
+          {props.songs[props.currentSongIndex].name}
+        </div>
+        <div className="artist">
+          {props.songs[props.currentSongIndex].singer}
+        </div>
+      </div>
+
       <div className="my-player">
         <audio
           id="sound"
@@ -121,7 +131,7 @@ function Player(props) {
             )
           }
         >
-          <BiSkipPreviousCircle className="smallLogo" />
+          <BsSkipBackwardCircle className="smallLogo" />
         </div>
 
         {/* this is the play pause button */}
@@ -132,11 +142,11 @@ function Player(props) {
         >
           {isPlaying ? (
             <i>
-              <AiOutlinePauseCircle className="Logo" />
+              <BsPauseCircle className="Logo" />
             </i>
           ) : (
             <i>
-              <AiOutlinePlayCircle className="Logo" />
+              <BsPlayCircle className="Logo" />
             </i>
           )}
         </div>
@@ -149,7 +159,7 @@ function Player(props) {
             )
           }
         >
-          <BiSkipNextCircle className="smallLogo" />
+          <BsSkipForwardCircle className="smallLogo" />
         </div>
       </div>
     </div>
