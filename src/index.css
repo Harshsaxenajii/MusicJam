@@ -326,6 +326,9 @@ audio {
 }
 
 .searchDiv {
+  display: flex;
+  gap: 10px;
+  align-items: center;
   position: absolute;
   top: 30px;
   background: white;
@@ -333,6 +336,7 @@ audio {
   padding: 8px 10px;
   border-radius: 10px;
   font-size: 12px;
+  cursor: pointer;
 }
 .searchDiv:hover {
   background: rgb(230, 227, 227);

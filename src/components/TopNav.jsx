@@ -3,7 +3,7 @@ import search_logo from "../Images/search.png";
 import user_logo from "../Images/logo.png";
 import { songs } from "../Songs";
 
-function TopNav() {
+function TopNav(props) {
   const [currSearch, setCurrSearch] = useState();
   return (
     <div>
@@ -23,7 +23,13 @@ function TopNav() {
               return newName.includes(currSearch);
             })
             .map((song) => (
-              <div className="searchDiv">{song.name}</div>
+              <div
+                onClick={() => props.setSongIndex(song.id)}
+                className="searchDiv "
+              >
+                <img className="favImg" src={song.cover} alt="" />
+                <div>{song.name}</div>
+              </div>
             ))}
         </div>
         <div className="user_info">

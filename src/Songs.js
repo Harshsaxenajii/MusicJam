@@ -10,6 +10,16 @@ export const songs = [
   },
   {
     id: 1,
+    name: "Bella Ciao",
+    singer: "El Profesor",
+    musicSrc:
+      "https://res.cloudinary.com/dxzbdrvmn/video/upload/v1681477726/music%20application/Random%20Songs/Bella_Ciao_PagalWorld.com.se_z0wcyr.mp3",
+    cover:
+      "https://res.cloudinary.com/dxzbdrvmn/image/upload/v1681477776/music%20application/Song%20Image/0335c80a9b324f52c282560a15353bdb_i9wluw.jpg",
+  },
+
+  {
+    id: 2,
     name: "Bedtime Stories",
     singer: "Jay Chou",
     cover:
@@ -17,15 +27,7 @@ export const songs = [
     musicSrc:
       "http://res.cloudinary.com/alick/video/upload/v1502375674/Bedtime_Stories.mp3",
   },
-  {
-    id: 2,
-    name: "Dorost Nemisham",
-    singer: "Sirvan Khosravi",
-    cover:
-      "https://res.cloudinary.com/ehsanahmadi/image/upload/v1573758778/Sirvan-Khosravi-Dorost-Nemisham_glicks.jpg",
-    musicSrc:
-      "https://res.cloudinary.com/ehsanahmadi/video/upload/v1573550770/Sirvan-Khosravi-Dorost-Nemisham-128_kb8urq.mp3",
-  },
+
   {
     id: 3,
     name: "Jeda Nasa",
@@ -47,60 +49,6 @@ export const songs = [
 
   {
     id: 5,
-    name: "Maan mare jaan",
-    singer: "qwerty",
-    musicSrc:
-      "https://res.cloudinary.com/dxzbdrvmn/video/upload/v1680929986/music%20application/Random%20Songs/Tu_Maan_Meri_Jaan_ffyzj4.mp3",
-    cover:
-      "http://res.cloudinary.com/alick/image/upload/v1502375978/bedtime_stories_bywggz.jpg",
-  },
-  {
-    id: 6,
-    name: "Maan mare jaan",
-    singer: "qwerty",
-    musicSrc:
-      "https://res.cloudinary.com/dxzbdrvmn/video/upload/v1680929986/music%20application/Random%20Songs/Tu_Maan_Meri_Jaan_ffyzj4.mp3",
-    cover:
-      "http://res.cloudinary.com/alick/image/upload/v1502375978/bedtime_stories_bywggz.jpg",
-  },
-  {
-    id: 7,
-    name: "Maan mare jaan",
-    singer: "qwerty",
-    musicSrc:
-      "https://res.cloudinary.com/dxzbdrvmn/video/upload/v1680929986/music%20application/Random%20Songs/Tu_Maan_Meri_Jaan_ffyzj4.mp3",
-    cover:
-      "http://res.cloudinary.com/alick/image/upload/v1502375978/bedtime_stories_bywggz.jpg",
-  },
-  {
-    id: 8,
-    name: "Maan mare jaan",
-    singer: "qwerty",
-    musicSrc:
-      "https://res.cloudinary.com/dxzbdrvmn/video/upload/v1680929986/music%20application/Random%20Songs/Tu_Maan_Meri_Jaan_ffyzj4.mp3",
-    cover:
-      "http://res.cloudinary.com/alick/image/upload/v1502375978/bedtime_stories_bywggz.jpg",
-  },
-  {
-    id: 9,
-    name: "Maan mare jaan",
-    singer: "qwerty",
-    musicSrc:
-      "https://res.cloudinary.com/dxzbdrvmn/video/upload/v1680929986/music%20application/Random%20Songs/Tu_Maan_Meri_Jaan_ffyzj4.mp3",
-    cover:
-      "http://res.cloudinary.com/alick/image/upload/v1502375978/bedtime_stories_bywggz.jpg",
-  },
-  {
-    id: 10,
-    name: "Maan mare jaan",
-    singer: "qwerty",
-    musicSrc:
-      "https://res.cloudinary.com/dxzbdrvmn/video/upload/v1680929986/music%20application/Random%20Songs/Tu_Maan_Meri_Jaan_ffyzj4.mp3",
-    cover:
-      "http://res.cloudinary.com/alick/image/upload/v1502375978/bedtime_stories_bywggz.jpg",
-  },
-  {
-    id: 11,
     name: "Maan mare jaan",
     singer: "qwerty",
     musicSrc:

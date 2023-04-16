@@ -4,7 +4,7 @@ import Navbar from "../../components/Navbar";
 import TopNav from "../../components/TopNav";
 import { songs } from "../../Songs";
 import { AiOutlineHeart } from "react-icons/ai";
-const fav = [3, 5, 7, 8];
+const fav = [3, 5, 7, 8, 1, 2, 9];
 
 const Home = () => {
   const [currentSongIndex, setSongIndex] = useState(0);
@@ -19,7 +19,7 @@ const Home = () => {
           <Navbar />
         </div>
         <div className="maincont">
-          <TopNav />
+          <TopNav setSongIndex={setSongIndex} />
           <h4>Top Songs</h4>
           <div className="songData">
             {songs.map((data) => (
@@ -47,7 +47,10 @@ const Home = () => {
                     return fav.includes(song.id);
                   })
                   .map((data) => (
-                    <div className="favourite">
+                    <div
+                      className="favourite"
+                      onClick={() => setSongIndex(data.id)}
+                    >
                       <div className="Datainfo">
                         <AiOutlineHeart className="ultraSmallLogo" />
                         <img className="favImg" src={data.cover} alt="" />

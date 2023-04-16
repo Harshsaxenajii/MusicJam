@@ -21,6 +21,29 @@ function Player(props) {
     progressBar.current.max = seconds;
   }, [audioElem?.current?.loadedmetada, audioElem?.current?.readyState]);
 
+  useEffect(() => {
+    newSong(props.musicLink);
+  }, [props.musicLink]);
+
+  useEffect(() => {
+    if (song != null) {
+      audioElem?.current?.load();
+      audioElem?.current?.play();
+    } else {
+      audioElem?.current?.pause();
+    }
+  }, [song]);
+
+  useEffect(() => {
+    setPlay(true);
+    audioElem?.current?.play();
+    animationRef.current = requestAnimationFrame(whilePlaying);
+  }, [props.musicLink]);
+
+  document.body.addEventListener("loadedmetadata", function () {
+    audioElem?.current?.play();
+  });
+
   const changePlayPause = () => {
     const prevValue = isPlaying;
     setPlay(!prevValue);
@@ -61,25 +84,17 @@ function Player(props) {
     setCurrenttime(progressBar.current.value);
   };
 
-  useEffect(() => {
-    if (song != null) {
-      audioElem.current.load();
-      audioElem.current.play();
-    } else {
-      audioElem.current.pause();
-    }
-  }, [song]);
-
-  useEffect(() => {
-    newSong(props.musicLink);
-  }, [props.musicLink]);
-
   return (
     <div className="playerDiv">
       <img style={{ width: "60%" }} src={props.songsImg} alt="" />
-
       <div className="my-player">
-        <audio ref={audioElem} preload="metadata" src={song} />
+        <audio
+          id="sound"
+          muted="muted"
+          ref={audioElem}
+          preload="metadata"
+          src={song}
+        />
       </div>
 
       <div className="looper">
@@ -97,7 +112,6 @@ function Player(props) {
             : "00:00"}
         </div>
       </div>
-
       <div className="player_button">
         {/* this is the prev button */}
         <div
