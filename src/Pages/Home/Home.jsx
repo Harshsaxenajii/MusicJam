@@ -8,11 +8,19 @@ import heart from "../../Images/heart.png";
 const fav = [3, 5, 7, 8];
 
 const Home = () => {
-  const [currentSongIndex, setSongIndex] = useState(0);
+  const [song, setSong] = useState(songs[0].musicSrc);
+  const [image, setImage] = useState(songs[0].cover);
+  const [name, setName] = useState(songs[0].name);
+  const [singer, setSinger] = useState(songs[0].singer);
+  const [auto, setAuto] = useState(false);
   const handleClick = (index) => {
-    console.log(index);
-    setSongIndex(index);
+    setSong(songs[index].musicSrc);
+    setImage(songs[index].cover);
+    setName(songs[index].name);
+    setSinger(songs[index].singer);
+    setAuto(true);
   };
+
   return (
     <div className="parentClass">
       <div className="mainDiv">
@@ -20,20 +28,20 @@ const Home = () => {
           <Navbar />
         </div>
         <div className="maincont">
-          <TopNav setSongIndex={setSongIndex} />
+          <TopNav handleClick={handleClick} />
           <h4>Top Songs</h4>
           <div className="songData">
             {songs.map((data) => (
               <div
                 className="musicCard"
-                key={data.id}
+                key={data?.id}
                 style={{ cursor: "pointer" }}
-                onClick={() => handleClick(data.id)}
+                onClick={() => handleClick(data?.id)}
               >
-                <img className="img_cover" src={data.cover} alt="" />
+                <img className="img_cover" src={data?.cover} alt="" />
 
-                <div className="song_name">{data.name}</div>
-                <div className="artist">{data.singer}</div>
+                <div className="song_name">{data?.name}</div>
+                <div className="artist">{data?.singer}</div>
               </div>
             ))}
           </div>
@@ -51,15 +59,15 @@ const Home = () => {
                   .map((data) => (
                     <div
                       className="favourite"
-                      onClick={() => setSongIndex(data.id)}
+                      onClick={() => handleClick(data?.id)}
                     >
                       <div className="Datainfo">
                         <AiOutlineHeart className="ultraSmallLogo" />
-                        <img className="favImg" src={data.cover} alt="" />
-                        <div>{data.name}</div>
+                        <img className="favImg" src={data?.cover} alt="" />
+                        <div>{data?.name}</div>
                       </div>
 
-                      <div>{data.singer}</div>
+                      <div>{data?.singer}</div>
                     </div>
                   ))}
               </div>
@@ -70,11 +78,11 @@ const Home = () => {
               <div className="imorecont player">
                 {songs && (
                   <Player
-                    currentSongIndex={currentSongIndex}
-                    setSongIndex={setSongIndex}
-                    musicLink={songs[currentSongIndex].musicSrc}
-                    songs={songs}
-                    songsImg={songs[currentSongIndex].cover}
+                    song={song}
+                    image={image}
+                    name={name}
+                    singer={singer}
+                    autoplay={auto}
                   />
                 )}
               </div>

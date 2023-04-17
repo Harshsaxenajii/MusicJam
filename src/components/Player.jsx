@@ -2,48 +2,19 @@ import React, { useEffect, useRef, useState } from "react";
 import { BsPauseCircle, BsPlayCircle, BsHeart } from "react-icons/bs";
 import { BsSkipForwardCircle, BsSkipBackwardCircle } from "react-icons/bs";
 
-function Player(props) {
-  const [song, newSong] = useState(props.musicLink);
+function Player({ song, image, name, singer, auto }) {
   const [isPlaying, setPlay] = useState(false);
   const [duration, setDuration] = useState(0);
   const [currentTime, setCurrenttime] = useState(0);
   const audioElem = useRef();
   const animationRef = useRef();
   const progressBar = useRef();
-  // var slider=document.getElementsByClassName("progressBar").oninput=function () {
-  //   var value=((this.value-this.min)/(this.max-this.min))*100
-  //   this.style.background='linear-gradient(to right,#FFA559 0%,#FFA559'+value+'%,#fff '+value+'%,#fff 100%)';
-
-  // }
 
   useEffect(() => {
     const seconds = Math.floor(audioElem.current.duration);
     setDuration(seconds);
     progressBar.current.max = seconds;
-  }, [audioElem?.current?.loadedmetada, audioElem?.current?.readyState]);
-
-  useEffect(() => {
-    newSong(props.musicLink);
-  }, [props.musicLink]);
-
-  useEffect(() => {
-    if (song != null) {
-      audioElem?.current?.load();
-      audioElem?.current?.play();
-    } else {
-      audioElem?.current?.pause();
-    }
-  }, [song]);
-
-  useEffect(() => {
-    setPlay(true);
-    audioElem?.current?.play();
-    animationRef.current = requestAnimationFrame(whilePlaying);
-  }, [props.musicLink]);
-
-  document.body.addEventListener("loadedmetadata", function () {
-    audioElem?.current?.play();
-  });
+  }, [audioElem?.current?.loadedmetada, audioElem?.current?.readyState, song]);
 
   const changePlayPause = () => {
     const prevValue = isPlaying;
@@ -87,24 +58,14 @@ function Player(props) {
 
   return (
     <div className="playerDiv">
-      <img style={{ width: "60%" }} src={props.songsImg} alt="" />
+      <img style={{ width: "60%" }} src={image} alt="" />
       <div>
-        <div className="song_name">
-          {props.songs[props.currentSongIndex].name}
-        </div>
-        <div className="artist">
-          {props.songs[props.currentSongIndex].singer}
-        </div>
+        <div className="song_name">{name}</div>
+        <div className="artist">{singer}</div>
       </div>
 
       <div className="my-player">
-        <audio
-          id="sound"
-          muted="muted"
-          ref={audioElem}
-          preload="metadata"
-          src={song}
-        />
+        <audio ref={audioElem} preload="metadata" src={song} autoPlay />
       </div>
 
       <div className="looper">
@@ -119,17 +80,18 @@ function Player(props) {
         <div className="time duration">
           {duration && !isNaN(duration) && calculateTime(duration)
             ? duration && !isNaN(duration) && calculateTime(duration)
-            : "00:00"}
+            : "Loading..."}
         </div>
       </div>
+
       <div className="player_button">
         {/* this is the prev button */}
         <div
-          onClick={() =>
-            props.setSongIndex(
-              (props.currentSongIndex - 1) % props.songs.length
-            )
-          }
+        // onClick={() =>
+        //   props.setSongIndex(
+        //     (props.currentSongIndex - 1) % props.songs.length
+        //   )
+        // }
         >
           <BsSkipBackwardCircle className="smallLogo" />
         </div>
@@ -153,11 +115,11 @@ function Player(props) {
 
         {/* this is the next button */}
         <div
-          onClick={() =>
-            props.setSongIndex(
-              (props.currentSongIndex + 1) % props.songs.length
-            )
-          }
+        // onClick={() =>
+        //   props.setSongIndex(
+        //     (props.currentSongIndex + 1) % props.songs.length
+        //   )
+        // }
         >
           <BsSkipForwardCircle className="smallLogo" />
         </div>

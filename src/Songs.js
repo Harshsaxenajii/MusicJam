@@ -59,42 +59,41 @@ export const songs = [
     singer: "Powfu",
     cover: "https://samplesongs.netlify.app/album-arts/death-bed.jpg",
     musicSrc: "https://samplesongs.netlify.app/Death%20Bed.mp3",
-    id: 6
+    id: 6,
   },
   {
     name: "Bad Liar",
     singer: "Imagine Dragons",
     cover: "https://samplesongs.netlify.app/album-arts/bad-liar.jpg",
     musicSrc: "https://samplesongs.netlify.app/Bad%20Liar.mp3",
-    id: 7
+    id: 7,
   },
   {
     name: "Faded",
     singer: "Alan Walker",
     cover: "https://samplesongs.netlify.app/album-arts/faded.jpg",
     musicSrc: "https://samplesongs.netlify.app/Faded.mp3",
-    id: 8
+    id: 8,
   },
   {
     name: "Hate Me",
     singer: "Ellie Goulding",
     cover: "https://samplesongs.netlify.app/album-arts/hate-me.jpg",
     musicSrc: "https://samplesongs.netlify.app/Hate%20Me.mp3",
-    id: 9
+    id: 9,
   },
   {
     name: "Solo",
     singer: "Clean Bandit",
     cover: "https://samplesongs.netlify.app/album-arts/solo.jpg",
     musicSrc: "https://samplesongs.netlify.app/Solo.mp3",
-    id: 10
+    id: 10,
   },
   {
     name: "Without Me",
     singer: "Halsey",
     cover: "https://samplesongs.netlify.app/album-arts/without-me.jpg",
     musicSrc: "https://samplesongs.netlify.app/Without%20Me.mp3",
-    id: 11
+    id: 11,
   },
- 
 ];

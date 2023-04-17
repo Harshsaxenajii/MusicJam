@@ -25,7 +25,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #FEF2F4;
+  background-color: #fef2f4;
 }
 .img_cover {
   width: 150px;
@@ -57,7 +57,7 @@ body {
 }
 .img_cover:hover {
   height: 67.6%;
-  width:101.6%;
+  width: 101.6%;
 }
 .song_name {
   margin-top: 1rem;
@@ -116,7 +116,7 @@ audio {
 }
 .mainNav {
   width: 18%;
-  background-color:#FFA559;
+  background-color: #ffa559;
   box-shadow: 0px 0px 25px rgba(25, 25, 25, 0.3);
   display: flex;
   flex-direction: column;
@@ -185,7 +185,7 @@ audio {
 }
 
 .search_bar input {
-  background-color: #FFA559;
+  background-color: #ffa559;
   border-radius: 1.3rem;
   border: none;
   width: 13rem;
@@ -198,7 +198,7 @@ audio {
 .search_bar input:focus {
   outline: none;
 }
-.search_bar input::placeholder{
+.search_bar input::placeholder {
   color: #191919;
 }
 .search_button {
@@ -211,7 +211,6 @@ audio {
   align-items: center;
   background-color: rgb(255, 255, 255, 0);
   cursor: pointer;
-  
 }
 .search_button img {
   margin-bottom: 0.1rem;
@@ -248,9 +247,9 @@ audio {
   display: flex;
   padding: 10px;
 }
-.player{
-  background-color: rgb(255, 255, 255,0.3);
-  outline: 1px solid  rgb(255, 165, 89);
+.player {
+  background-color: rgb(255, 255, 255, 0.3);
+  outline: 1px solid rgb(255, 165, 89);
   box-shadow: 0px 0px 25px rgba(25, 25, 25, 0.2);
   border-radius: 1.3rem;
 }
@@ -261,10 +260,9 @@ audio {
 .favbox {
   min-width: 63%;
 }
-.favbox h4{
+.favbox h4 {
   display: inline;
   margin-right: 10px;
-
 }
 
 .player_button {
@@ -278,20 +276,20 @@ audio {
 .Logo {
   width: 35px;
   height: 35px;
-  background-color: #FFA559;
+  background-color: #ffa559;
   border-radius: 50%;
 }
 
 .smallLogo {
   width: 25px;
   height: 25px;
-  background-color: #FFA559;
+  background-color: #ffa559;
   border-radius: 50%;
 }
 .ultraSmallLogo {
   width: 14px;
   height: 14px;
-  background-color: #FFA559;
+  background-color: #ffa559;
   border-radius: 50%;
 }
 .time {
@@ -310,9 +308,8 @@ audio {
   border-radius: 1.3rem;
   overflow: hidden;
 }
-.playerDiv img{
+.playerDiv img {
   border-radius: 1.2rem;
-
 }
 
 .favourite {
@@ -326,9 +323,8 @@ audio {
   width: 100%;
   cursor: pointer;
   font-size: 12px;
-  margin-bottom:12px ;
+  margin-bottom: 12px;
   background-color: rgb(255, 165, 89);
-
 }
 .Datainfo {
   display: flex;
@@ -355,47 +351,56 @@ audio {
   display: flex;
   gap: 10px;
   align-items: center;
-  position: absolute;
-  top: 30px;
   background: white;
-  width: 23%;
   padding: 8px 10px;
-  border-radius: 10px;
   font-size: 12px;
   cursor: pointer;
 }
 .searchDiv:hover {
   background: rgb(230, 227, 227);
 }
-.progressBar{
+
+.fullSearchDiv {
+  border-radius: 10px;
+  z-index: 10;
+  top: 30px;
+  width: 23%;
+  position: absolute;
+}
+.progressBar {
   height: 20px;
-  background: linear-gradient(to right,#FFA559 0%,#FFA559 0%,#fff 0%,#fff 100%);
+  background: linear-gradient(
+    to right,
+    #ffa559 0%,
+    #ffa559 0%,
+    #fff 0%,
+    #fff 100%
+  );
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   height: 20px;
   transition: background 450s ease-in;
   -webkit-appearance: none;
   border-radius: 25px;
-  border:1px solid #FFA559;
+  border: 1px solid #ffa559;
 }
-.progressBar::-webkit-slider-thumb{
+.progressBar::-webkit-slider-thumb {
   appearance: none;
   cursor: pointer;
   height: 10px;
   width: 10px;
   border-radius: 50%;
-  background-color: #FFA559;
+  background-color: #ffa559;
   border: 1px solid black;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
-.topnav_link{
+.topnav_link {
   border: none;
   color: #191919;
   text-decoration: none;
-  border-radius:7px;
+  border-radius: 7px;
   padding: 8px 6px;
   margin-right: 12px;
   cursor: pointer;
-  background-color:#FFA559;
+  background-color: #ffa559;
   margin-bottom: 8px;
-
 }
